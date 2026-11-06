@@ -261,5 +261,5 @@ Voici quelques vues représentatives de l’application :
 
 ## Auteur
 
-**Riyad Houda**  
+**BALMIR Salma**  
 Master SDIA — ENSET Mohammedia
