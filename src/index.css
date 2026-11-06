@@ -1,0 +1,594 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: #f3f5f9;
+  color: #172033;
+}
+
+button, input {
+  font: inherit;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #101a35, #243b65);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.login-logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #e9efff;
+  color: #3157a4;
+}
+
+.login-card h1 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 9px;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #758096;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-card label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.input-wrapper {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  margin-bottom: 22px;
+  border: 1px solid #dce1eb;
+  border-radius: 8px;
+  color: #8792a7;
+}
+
+.input-wrapper:focus-within {
+  border-color: #4267b2;
+}
+
+.input-wrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #172033;
+  background: transparent;
+}
+
+.login-card form button {
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: #3157a4;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-card form button:hover {
+  background: #254785;
+}
+
+.login-card form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #bd3030;
+  font-size: 13px;
+}
+
+.register-link {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #758096;
+}
+
+.register-link a {
+  color: #3157a4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Shared blue-violet theme for authentication and dashboards. */
+:root {
+  color-scheme: light;
+  --theme-primary: #5846d8;
+  --theme-primary-hover: #4534bf;
+  --theme-primary-soft: #efedff;
+  --theme-ink: #211d3b;
+  --theme-muted: #686580;
+  --theme-border: #e6e3f2;
+  --theme-page: #f6f5fb;
+  --theme-surface: #ffffff;
+}
+
+body {
+  background: var(--theme-page);
+  color: var(--theme-ink);
+}
+
+.login-page {
+  background:
+    radial-gradient(ellipse at 15% 15%, rgba(128, 111, 255, .4), transparent 35%),
+    linear-gradient(135deg, #201b43, #382d78 58%, #5143a5);
+}
+
+.login-card {
+  border: 1px solid rgba(255, 255, 255, .75);
+  box-shadow: 0 24px 70px rgba(19, 14, 53, .3);
+}
+
+.login-logo {
+  background: var(--theme-primary-soft);
+  color: var(--theme-primary);
+}
+
+.input-wrapper {
+  border-color: #dcd9eb;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 3px rgba(88, 70, 216, .12);
+}
+
+.login-card form button,
+.employee-refresh,
+.employee-form-actions button,
+.admin-refresh,
+.admin-incidents-refresh,
+.admin-assign-controls button,
+.users-refresh,
+.technician-page .refresh-button {
+  background: var(--theme-primary);
+}
+
+.login-card form button:hover,
+.employee-refresh:hover,
+.employee-form-actions button:hover,
+.admin-refresh:hover,
+.admin-incidents-refresh:hover,
+.admin-assign-controls button:hover,
+.users-refresh:hover,
+.technician-page .refresh-button:hover {
+  background: var(--theme-primary-hover);
+}
+
+.register-link a {
+  color: var(--theme-primary);
+}
+
+.employee-page,
+.users-page,
+.admin-incidents-page,
+.technician-page,
+.admin-dashboard {
+  background: var(--theme-page);
+  color: var(--theme-ink);
+}
+
+.employee-header,
+.users-header,
+.admin-incidents-header,
+.technician-header,
+.admin-header,
+.employee-panel,
+.users-panel,
+.admin-incidents-panel,
+.technician-incidents-section,
+.admin-section,
+.employee-stat-card,
+.users-stat-card,
+.admin-incidents-stats article,
+.stat-card,
+.admin-stat-card {
+  background-color: var(--theme-surface);
+  border-color: var(--theme-border);
+}
+
+.employee-logo,
+.users-logo,
+.admin-incidents-logo,
+.technician-logo,
+.employee-refresh,
+.users-refresh,
+.admin-incidents-refresh,
+.technician-page .refresh-button,
+.employee-form-actions button,
+.admin-refresh,
+.admin-assign-controls button {
+  color: #fff;
+}
+
+.employee-logo,
+.users-logo,
+.admin-incidents-logo,
+.technician-logo {
+  background: linear-gradient(145deg, #6958e8, #4938bd);
+  box-shadow: 0 5px 13px rgba(88, 70, 216, .2);
+}
+
+.employee-brand h1,
+.users-brand h1,
+.admin-incidents-brand h1,
+.technician-brand h1,
+.employee-welcome h2,
+.users-welcome h2,
+.admin-incidents-welcome h2,
+.technician-welcome h2,
+.admin-header h1,
+.employee-section-heading h2,
+.users-panel-heading h2,
+.admin-incidents-panel-heading h2,
+.section-heading h2,
+.admin-section-heading h2,
+.admin-summary-heading h2 {
+  color: var(--theme-ink);
+}
+
+.employee-brand p,
+.users-brand p,
+.admin-incidents-brand p,
+.technician-brand p,
+.employee-user-info span,
+.users-admin-name span,
+.admin-incidents-user span,
+.technician-user-info span,
+.employee-welcome p,
+.users-welcome p,
+.admin-incidents-welcome p,
+.technician-welcome p,
+.employee-section-heading p,
+.users-panel-heading p,
+.admin-incidents-panel-heading p,
+.section-heading p,
+.admin-section-heading p,
+.admin-summary-heading p {
+  color: var(--theme-muted);
+}
+
+.employee-avatar,
+.technician-user-avatar,
+.employee-stat-icon,
+.users-stat-icon,
+.admin-incidents-stat-icon,
+.stat-icon,
+.admin-stat-icon,
+.employee-section-icon,
+.users-person-avatar,
+.incident-count {
+  background: var(--theme-primary-soft);
+  color: var(--theme-primary);
+}
+
+.employee-count,
+.users-count,
+.admin-incidents-panel-heading > span {
+  background: var(--theme-primary-soft);
+  color: #4034a0;
+}
+
+.employee-field input:focus,
+.employee-field textarea:focus,
+.employee-field select:focus,
+.admin-assign-controls select:focus,
+.status-control select:focus {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 0 3px rgba(88, 70, 216, .12);
+}
+
+.employee-field input,
+.employee-field textarea,
+.employee-field select,
+.admin-assign-controls select,
+.status-control select {
+  border-color: #dcd9eb;
+}
+
+.employee-table-wrap,
+.users-table-wrap,
+.admin-incidents-table-wrap,
+.employee-table th,
+.users-table th,
+.admin-incidents-table th {
+  border-color: var(--theme-border);
+}
+
+.employee-table th,
+.users-table th,
+.admin-incidents-table th {
+  background: #f2f0fa;
+  color: #514d6e;
+}
+
+.admin-sidebar {
+  background: linear-gradient(180deg, #211c43, #2b2457);
+}
+
+.admin-brand-icon {
+  background: #493e89;
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.active {
+  background: rgba(136, 120, 255, .2);
+}
+
+.admin-sidebar nav a.active .nav-dot {
+  background: #b6adff;
+  box-shadow: 0 0 0 4px rgba(182, 173, 255, .16);
+}
+
+.admin-refresh:focus-visible,
+.employee-refresh:focus-visible,
+.users-refresh:focus-visible,
+.admin-incidents-refresh:focus-visible,
+.technician-page .refresh-button:focus-visible,
+.login-card form button:focus-visible,
+.employee-form-actions button:focus-visible,
+.admin-assign-controls button:focus-visible,
+.admin-sidebar a:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #a69bff;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Distinctive teal and coral dashboard identity. */
+:root {
+  --theme-primary: #087f75;
+  --theme-primary-hover: #06665f;
+  --theme-primary-soft: #e2f4f0;
+  --theme-ink: #193b3a;
+  --theme-muted: #687f7c;
+  --theme-border: #dcebe7;
+  --theme-page: #f3f8f5;
+}
+
+.login-page {
+  justify-content: flex-start;
+  padding-left: max(8%, calc((100vw - 1200px) / 2));
+  background:
+    radial-gradient(ellipse at 82% 24%, rgba(122, 215, 197, .28), transparent 22%),
+    radial-gradient(ellipse at 83% 75%, rgba(41, 167, 146, .35), transparent 28%),
+    linear-gradient(115deg, #123f3d 0%, #087f75 58%, #195e59 100%);
+}
+
+.login-page::after {
+  content: "";
+  position: absolute;
+  right: 12%;
+  top: 50%;
+  width: min(32vw, 390px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: 46% 54% 62% 38% / 42% 42% 58% 58%;
+  box-shadow:
+    0 0 0 28px rgba(255, 255, 255, .035),
+    0 0 0 56px rgba(255, 255, 255, .025);
+  transform: translateY(-50%) rotate(-18deg);
+  pointer-events: none;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  max-width: 460px;
+  border-radius: 22px;
+}
+
+.login-logo {
+  background: #e2f4f0;
+  color: #087f75;
+}
+
+.employee-welcome,
+.users-welcome,
+.admin-incidents-welcome,
+.technician-welcome {
+  position: relative;
+  overflow: hidden;
+  flex-direction: row-reverse;
+  padding: 28px 30px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 8% 115%, rgba(122, 215, 197, .3), transparent 27%),
+    linear-gradient(112deg, #14514d, #087f75 70%, #269486);
+  box-shadow: 0 12px 28px rgba(23, 88, 78, .14);
+}
+
+.employee-welcome > div,
+.users-welcome > div,
+.admin-incidents-welcome > div,
+.technician-welcome > div {
+  position: relative;
+  z-index: 1;
+}
+
+.employee-welcome h2,
+.users-welcome h2,
+.admin-incidents-welcome h2,
+.technician-welcome h2 {
+  color: #fff;
+}
+
+.employee-welcome p,
+.users-welcome p,
+.admin-incidents-welcome p,
+.technician-welcome p,
+.employee-eyebrow,
+.users-eyebrow,
+.admin-incidents-eyebrow,
+.welcome-label {
+  color: #d5efea;
+}
+
+.employee-refresh,
+.users-refresh,
+.admin-incidents-refresh,
+.technician-page .refresh-button {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  background: #fff;
+  color: #087f75;
+  box-shadow: 0 5px 14px rgba(8, 52, 48, .18);
+}
+
+.employee-refresh:hover,
+.users-refresh:hover,
+.admin-incidents-refresh:hover,
+.technician-page .refresh-button:hover {
+  background: #e2f4f0;
+  color: #06665f;
+}
+
+.employee-logo,
+.users-logo,
+.admin-incidents-logo,
+.technician-logo {
+  background: linear-gradient(145deg, #0d988b, #07665f);
+  box-shadow: 0 5px 13px rgba(8, 127, 117, .2);
+}
+
+.admin-sidebar {
+  background: linear-gradient(180deg, #153e3d, #0b625c);
+}
+
+.admin-brand-icon {
+  background: #087f75;
+}
+
+.admin-sidebar nav a:hover,
+.admin-sidebar nav a.active {
+  background: rgba(99, 211, 188, .18);
+}
+
+.admin-sidebar nav a.active .nav-dot {
+  background: #91e0cd;
+  box-shadow: 0 0 0 4px rgba(145, 224, 205, .16);
+}
+
+.admin-refresh,
+.admin-assign-controls button,
+.employee-form-actions button {
+  background: #087f75;
+}
+
+.admin-refresh:hover,
+.admin-assign-controls button:hover,
+.employee-form-actions button:hover {
+  background: #06665f;
+}
+
+.admin-stat-icon,
+.users-stat-icon,
+.employee-stat-icon,
+.admin-incidents-stat-icon,
+.stat-icon,
+.employee-section-icon,
+.users-person-avatar,
+.incident-count {
+  background: #e2f4f0;
+  color: #087f75;
+}
+
+.employee-count,
+.users-count,
+.admin-incidents-panel-heading > span {
+  background: #e2f4f0;
+  color: #08675f;
+}
+
+@media (max-width: 760px) {
+  .login-page {
+    justify-content: center;
+    padding: 24px;
+  }
+
+  .login-page::after {
+    right: -18%;
+    width: 58vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .employee-welcome,
+  .users-welcome,
+  .admin-incidents-welcome,
+  .technician-welcome {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+  }
+
+  .employee-refresh,
+  .users-refresh,
+  .admin-incidents-refresh,
+  .technician-page .refresh-button {
+    align-self: flex-end;
+  }
+}
